@@ -14,7 +14,7 @@ struct PickCurrencyUIView: View {
     @ObservedObject private var viewModel: PickCurrencyViewModelImpl
     @State private var searchText: String
     
-    init(viewModel: PickCurrencyViewModelImpl = PickCurrencyViewModelImpl()) {
+    init(viewModel: PickCurrencyViewModelImpl = PickCurrencyViewModelImpl(mode: .source)) {
         self.viewModel = viewModel
         self.searchText = ""
     }

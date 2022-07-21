@@ -28,7 +28,12 @@ extension UIViewController {
 
 class HomeViewController: UIViewController {
 
+    struct Input {
+        public let onSelection = PassthroughSubject<SelectionModel, Never>()
+    }
+    
     var viewModel: HomeViewModel!
+    let input = Input()
     
     @IBOutlet weak var targetButton: UIButton!
     @IBOutlet weak var sourceButton: UIButton!
@@ -41,6 +46,16 @@ class HomeViewController: UIViewController {
     convenience init?(coder: NSCoder, viewModel: HomeViewModel) {
         self.init(coder: coder)
         self.viewModel = viewModel
+        
+        input.onSelection
+            .sink(receiveValue: { value in
+                if value.mode == .source {
+                    viewModel.input.onSource.send(value.symbol)
+                } else {
+                    viewModel.input.onTarget.send(value.symbol)
+                }
+            })
+            .store(in: &cancellables)
     }
     
     override func viewDidLoad() {
@@ -122,15 +137,5 @@ private extension HomeViewController {
                     self.busyIndicator.stopAnimating()
                 }
             }.store(in: &cancellables)
-    }
-}
-
-extension HomeViewController: PickCurrencyViewModelDelegate {
-    func onSymbolSelected(viewModel: PickCurrencyViewModel, symbol: SymbolModel) {
-        if viewModel.mode == .source {
-            self.viewModel.input.onSource.send(symbol)
-        } else {
-            self.viewModel.input.onTarget.send(symbol)
-        }
     }
 }

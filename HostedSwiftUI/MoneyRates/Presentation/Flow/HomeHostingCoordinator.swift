@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Combine
 import ModelLibrary
 
 final class HomeHostingCoordinator: HomeCoordinator {
     
     private weak var parentController: HomeHostingController!
+    private var cancellables: Set<AnyCancellable> = []
     
     init(parentController: HomeHostingController) {
         self.parentController = parentController
@@ -27,22 +29,21 @@ final class HomeHostingCoordinator: HomeCoordinator {
     }
 }
 
-extension HomeHostingCoordinator {
+private extension HomeHostingCoordinator {
     
-    private func getUIController(_ mode: PickCurrencyModeEnum) -> PickCurrencyUIViewController {
-        let viewModel = PickCurrencyViewModelImpl()
-        viewModel.delegate = self
-        viewModel.mode = mode
+    func getUIController(_ mode: PickCurrencyModeEnum) -> PickCurrencyUIViewController {
+        let viewModel = PickCurrencyViewModelImpl(mode: mode)
+        viewModel.output.selection
+            .sink(receiveValue: { value in
+                self.dismiss(value)
+            })
+            .store(in: &self.cancellables)
         return PickCurrencyUIViewController(viewModel: viewModel)
     }
-}
-
-extension HomeHostingCoordinator: PickCurrencyViewModelDelegate {
-    func onSymbolSelected(viewModel: PickCurrencyViewModel, symbol: SymbolModel) {
-        print("onSymbolSelected \(symbol.description)")
+    
+    func dismiss(_ selection: SelectionModel) {
         parentController.presentedViewController?.dismiss(animated: true, completion: { [weak self] in
-            // Tell the model
-            self?.parentController.onSymbolSelected(viewModel: viewModel, symbol: symbol)
+            self?.parentController.input.selection.send(selection)
         })
     }
 }

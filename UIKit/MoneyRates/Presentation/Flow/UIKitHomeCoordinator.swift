@@ -6,48 +6,50 @@
 //
 
 import UIKit
+import Combine
 import ModelLibrary
 
 final class HomeCoordinatorImpl: HomeCoordinator {
     
     private weak var parentController: HomeViewController!
+    private var cancellables: Set<AnyCancellable> = []
     
     init(parentController: HomeViewController) {
         self.parentController = parentController
     }
     
     func goToPickSource() {
-        let controller  = getController()
-        controller.viewModel.mode = PickCurrencyModeEnum.source
+        let controller  = getController(.source)
         parentController.present(controller, animated: true)
     }
     
     func goToPickTarget() {
-        let controller  = getController()
-        controller.viewModel.mode = PickCurrencyModeEnum.target
+        let controller  = getController(.target)
         parentController.present(controller, animated: true)
     }
 }
 
-extension HomeCoordinatorImpl {
+private extension HomeCoordinatorImpl {
     
-    private func getController() -> PickCurrencyViewController {
+    func getController(_ mode: PickCurrencyModeEnum) -> PickCurrencyViewController {
         let controller = UIStoryboard.main.instantiateViewController(identifier: "currencyViewController", creator: { coder in
-            let viewModel = PickCurrencyViewModelImpl()
-            viewModel.delegate = self
+            let viewModel = PickCurrencyViewModelImpl(mode: mode)
+            viewModel.output.selection
+                .sink(receiveValue: { value in
+                    self.dismiss(value)
+                })
+                .store(in: &self.cancellables)
             let result = PickCurrencyViewController(coder: coder, viewModel: viewModel)
             return result
         }) as! PickCurrencyViewController
         return controller
     }
-}
-
-extension HomeCoordinatorImpl: PickCurrencyViewModelDelegate {
-    func onSymbolSelected(viewModel: PickCurrencyViewModel, symbol: SymbolModel) {
-        print("onSymbolSelected \(symbol.description)")
+    
+    func dismiss(_ selection: SelectionModel) {
         parentController.presentedViewController?.dismiss(animated: true, completion: { [weak self] in
             // Tell the model
-            self?.parentController.onSymbolSelected(viewModel: viewModel, symbol: symbol)
+            self?.parentController.input.onSelection.send(selection)
         })
+        
     }
 }

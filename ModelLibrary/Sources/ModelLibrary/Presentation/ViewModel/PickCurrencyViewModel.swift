@@ -8,26 +8,25 @@
 import Foundation
 import Combine
 
+public enum PickCurrencyModeEnum {
+    case source
+    case target
+}
+
 public struct ErrorViewModel: Equatable {
     public let title: String
     public let description: String
 }
 
+public struct SelectionModel {
+    public let symbol: SymbolModel
+    public let mode: PickCurrencyModeEnum
+}
+
 extension ErrorViewModel {
-    
     public init(error: Error) {
         self.init(title: "An Error Occurred", description: error.localizedDescription)
     }
-    
-}
-
-public protocol PickCurrencyViewModelDelegate: AnyObject {
-    func onSymbolSelected(viewModel: PickCurrencyViewModel, symbol: SymbolModel)
-}
-
-public enum PickCurrencyModeEnum {
-    case source
-    case target
 }
 
 public struct PickCurrencyViewInput {
@@ -41,12 +40,10 @@ public struct PickCurrencyViewOutput {
     public let symbols: AnyPublisher<[SymbolModel], Never>
     public let error: AnyPublisher<ErrorViewModel, Never>
     public let searchEnabled: AnyPublisher<Bool, Never>
+    public let selection: AnyPublisher<SelectionModel, Never>
 }
 
 public protocol PickCurrencyViewModel {
-    
-    var mode: PickCurrencyModeEnum { get set }
-    var delegate: PickCurrencyViewModelDelegate? { get set }
     
     func currencyCount() -> Int
     func symbolAt(at: Int) -> SymbolModel
@@ -56,9 +53,6 @@ public protocol PickCurrencyViewModel {
 }
 
 final public class PickCurrencyViewModelImpl: PickCurrencyViewModel, ObservableObject {
-    
-    public var mode: PickCurrencyModeEnum = .source
-    weak public var delegate: PickCurrencyViewModelDelegate?
     
     private let userCase: SymbolUseCase
     private var cancellables: Set<AnyCancellable> = []
@@ -74,14 +68,15 @@ final public class PickCurrencyViewModelImpl: PickCurrencyViewModel, ObservableO
     @Published var error: ErrorViewModel? = nil
     @Published var searchEnabled: Bool = false
     @Published var symbols: [SymbolModel] = []
+    @Published var selection: SelectionModel? = nil
     
-    init(useCase: SymbolUseCase) {
+    init(useCase: SymbolUseCase, mode: PickCurrencyModeEnum) {
         self.userCase = useCase
-        _output = bind(input: input)
+        _output = bind(input: input, mode: mode)
     }
     
-    public convenience init() {
-        self.init(useCase: SymbolUseCaseImpl())
+    public convenience init(mode: PickCurrencyModeEnum) {
+        self.init(useCase: SymbolUseCaseImpl(), mode: mode)
     }
     
     public func currencyCount() -> Int {
@@ -92,7 +87,7 @@ final public class PickCurrencyViewModelImpl: PickCurrencyViewModel, ObservableO
         symbols[at]
     }
     
-    private func bind(input: PickCurrencyViewInput) -> PickCurrencyViewOutput {
+    private func bind(input: PickCurrencyViewInput, mode: PickCurrencyModeEnum) -> PickCurrencyViewOutput {
         typealias SymbolsType = Result<[SymbolModel], Error>
         input.onLoad
             .map({
@@ -134,15 +129,15 @@ final public class PickCurrencyViewModelImpl: PickCurrencyViewModel, ObservableO
         
         input.onSelection
             .sink(receiveValue: { value in
-                print("onSelection: \(value)m delegate: \(self.delegate)")
                 let symbol = self.symbols[value]
-                self.delegate?.onSymbolSelected(viewModel: self, symbol: symbol)
+                self.selection = SelectionModel(symbol: symbol, mode: mode)
             })
             .store(in: &cancellables)
         
         return PickCurrencyViewOutput(
             symbols: $symbols.eraseToAnyPublisher(),
             error: $error.compactMap({$0}).eraseToAnyPublisher(),
-            searchEnabled: $searchEnabled.eraseToAnyPublisher())
+            searchEnabled: $searchEnabled.eraseToAnyPublisher(),
+            selection: $selection.compactMap({$0}).eraseToAnyPublisher())
     }
 }
