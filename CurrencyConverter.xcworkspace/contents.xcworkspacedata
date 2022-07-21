@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:MultiApp"
+      name = "MultiApp">
+      <FileRef
+         location = "group:multi-app-converter.xcodeproj">
+      </FileRef>
+      <Group
+         location = "group:macOS"
+         name = "macOS">
+         <FileRef
+            location = "group:macOS.entitlements">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Shared"
+         name = "Shared">
+         <Group
+            location = "group:Assets.xcassets"
+            name = "Assets.xcassets">
+            <Group
+               location = "group:AppIcon.appiconset"
+               name = "AppIcon.appiconset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:AccentColor.colorset"
+               name = "AccentColor.colorset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:multi_app_converterApp.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ContentView.swift">
+         </FileRef>
+      </Group>
+   </Group>
+   <Group
+      location = "group:MacOS"
+      name = "MacOS">
+      <Group
+         location = "group:MacOSMoneyRates"
+         name = "MacOSMoneyRates">
+         <FileRef
+            location = "group:ViewController.swift">
+         </FileRef>
+         <FileRef
+            location = "group:MacOSMoneyRates.entitlements">
+         </FileRef>
+         <Group
+            location = "group:Assets.xcassets"
+            name = "Assets.xcassets">
+            <Group
+               location = "group:AppIcon.appiconset"
+               name = "AppIcon.appiconset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:AccentColor.colorset"
+               name = "AccentColor.colorset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Base.lproj"
+            name = "Base.lproj">
+            <FileRef
+               location = "group:Main.storyboard">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:AppDelegate.swift">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:MacOSMoneyRates.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:UIKit"
+      name = "UIKit">
+      <FileRef
+         location = "group:MoneyRates.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:LICENSE">
+      </FileRef>
+      <Group
+         location = "group:MoneyRatesUITests"
+         name = "MoneyRatesUITests">
+         <FileRef
+            location = "group:MoneyRatesUITests.swift">
+         </FileRef>
+         <FileRef
+            location = "group:MoneyRatesUITestsLaunchTests.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Resources"
+         name = "Resources">
+         <FileRef
+            location = "group:square-cash-app-logo.svg">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+      <Group
+         location = "group:MoneyRatesTests"
+         name = "MoneyRatesTests">
+         <Group
+            location = "group:MockData"
+            name = "MockData">
+            <FileRef
+               location = "group:symbols.json">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:HomeViewModelTests.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:MoneyRates"
+         name = "MoneyRates">
+         <Group
+            location = "group:Assets.xcassets"
+            name = "Assets.xcassets">
+            <Group
+               location = "group:AppIcon.appiconset"
+               name = "AppIcon.appiconset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:AccentColor.colorset"
+               name = "AccentColor.colorset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:test_icon.imageset"
+               name = "test_icon.imageset">
+               <FileRef
+                  location = "group:square-cash-app-logo.svg">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Base.lproj"
+            name = "Base.lproj">
+            <FileRef
+               location = "group:LaunchScreen.storyboard">
+            </FileRef>
+            <FileRef
+               location = "group:Main.storyboard">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:AppDelegate.swift">
+         </FileRef>
+         <Group
+            location = "group:Presentation"
+            name = "Presentation">
+            <Group
+               location = "group:Common"
+               name = "Common">
+               <FileRef
+                  location = "group:UIKit+Extensions.swift">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:View"
+               name = "View">
+               <FileRef
+                  location = "group:PickCurrencyViewController.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:HomeViewController.swift">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:Flow"
+               name = "Flow">
+               <FileRef
+                  location = "group:UIKitHomeCoordinator.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:UIKitAppCoordinator.swift">
+               </FileRef>
+            </Group>
+         </Group>
+         <FileRef
+            location = "group:Info.plist">
+         </FileRef>
+         <FileRef
+            location = "group:SceneDelegate.swift">
+         </FileRef>
+      </Group>
+   </Group>
+   <Group
+      location = "group:HostedSwiftUI"
+      name = "HostedSwiftUI">
+      <Group
+         location = "group:ConverterkitTests"
+         name = "ConverterkitTests">
+      </Group>
+      <FileRef
+         location = "group:mixed_combine.diff">
+      </FileRef>
+      <FileRef
+         location = "group:/Users/omar/Documents/XCode/CurrencyConverterModel/HostedSwiftUI/HostedMoneyRates.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:LICENSE">
+      </FileRef>
+      <Group
+         location = "group:MoneyRatesUITests"
+         name = "MoneyRatesUITests">
+         <FileRef
+            location = "group:MoneyRatesUITests.swift">
+         </FileRef>
+         <FileRef
+            location = "group:MoneyRatesUITestsLaunchTests.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Resources"
+         name = "Resources">
+         <FileRef
+            location = "group:square-cash-app-logo.svg">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+      <Group
+         location = "group:MoneyRatesTests"
+         name = "MoneyRatesTests">
+         <Group
+            location = "group:MockData"
+            name = "MockData">
+            <FileRef
+               location = "group:symbols.json">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:HomeViewModelTests.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:MoneyRates"
+         name = "MoneyRates">
+         <FileRef
+            location = "group:MoneyRates.xcdatamodeld">
+         </FileRef>
+         <Group
+            location = "group:Assets.xcassets"
+            name = "Assets.xcassets">
+            <Group
+               location = "group:AppIcon.appiconset"
+               name = "AppIcon.appiconset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:AccentColor.colorset"
+               name = "AccentColor.colorset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:test_icon.imageset"
+               name = "test_icon.imageset">
+               <FileRef
+                  location = "group:square-cash-app-logo.svg">
+               </FileRef>
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:Base.lproj"
+            name = "Base.lproj">
+            <FileRef
+               location = "group:LaunchScreen.storyboard">
+            </FileRef>
+            <FileRef
+               location = "group:Main.storyboard">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:AppDelegate.swift">
+         </FileRef>
+         <Group
+            location = "group:Data"
+            name = "Data">
+            <Group
+               location = "group:Network"
+               name = "Network">
+               <FileRef
+                  location = "group:ExchangeRateService.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:APISymbolsItem.swift">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:Storage"
+               name = "Storage">
+               <FileRef
+                  location = "group:SymbolRepository.swift">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:GatewayImpl"
+               name = "GatewayImpl">
+               <FileRef
+                  location = "group:ExchangeRateGateWayImpl.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:SymbolRepositoryGatewayImpl.swift">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:Domain"
+            name = "Domain">
+            <Group
+               location = "group:UseCases"
+               name = "UseCases">
+               <FileRef
+                  location = "group:ConversionUseCase.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ResetDataUseCase.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:SymbolUseCase.swift">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:Entities"
+               name = "Entities">
+               <FileRef
+                  location = "group:SymbolModel.swift">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:Gateway"
+               name = "Gateway">
+               <FileRef
+                  location = "group:SymbolRepositoryGateway.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ExchangeRateGateway.swift">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:Presentation"
+            name = "Presentation">
+            <Group
+               location = "group:ViewModel"
+               name = "ViewModel">
+               <FileRef
+                  location = "group:HomeViewModel.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:PickCurrencyViewModel.swift">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:View"
+               name = "View">
+               <FileRef
+                  location = "group:PickCurrencyUIViewController.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:PickCurrencyViewController.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:HomeViewController.swift">
+               </FileRef>
+               <Group
+                  location = "group:UIViews"
+                  name = "UIViews">
+                  <FileRef
+                     location = "group:HomeUIView.swift">
+                  </FileRef>
+                  <FileRef
+                     location = "group:PickCurrencyUIView.swift">
+                  </FileRef>
+                  <FileRef
+                     location = "group:View+Extensions.swift">
+                  </FileRef>
+                  <FileRef
+                     location = "group:ActivityIndicatorView.swift">
+                  </FileRef>
+               </Group>
+               <FileRef
+                  location = "group:HomeHostingController.swift">
+               </FileRef>
+               <Group
+                  location = "group:SwiftUI"
+                  name = "SwiftUI">
+               </Group>
+            </Group>
+            <Group
+               location = "group:Flow"
+               name = "Flow">
+               <FileRef
+                  location = "group:AppCoordinator.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:AppHostingCoordinator.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:HomeCoordinator.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:HomeHostingCoordinator.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:Coordinator.swift">
+               </FileRef>
+            </Group>
+         </Group>
+         <FileRef
+            location = "group:Info.plist">
+         </FileRef>
+         <FileRef
+            location = "group:SceneDelegate.swift">
+         </FileRef>
+      </Group>
+   </Group>
+</Workspace>

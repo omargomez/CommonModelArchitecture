@@ -1,0 +1,694 @@
+diff --git a/MoneyRates.xcodeproj/project.pbxproj b/MoneyRates.xcodeproj/project.pbxproj
+index b9b57e1..30cba14 100644
+--- a/MoneyRates.xcodeproj/project.pbxproj
++++ b/MoneyRates.xcodeproj/project.pbxproj
+@@ -8,6 +8,8 @@
+ 
+ /* Begin PBXBuildFile section */
+ 		07CE1B1428510036007B23F4 /* PickCurrencyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CE1B1328510036007B23F4 /* PickCurrencyUIView.swift */; };
++		410A258228623E0B00F2CAD0 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A258128623E0B00F2CAD0 /* View+Extensions.swift */; };
++		410A258428623EC500F2CAD0 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A258328623EC500F2CAD0 /* ActivityIndicatorView.swift */; };
+ 		419C780527C3DF4000F8A988 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419C780427C3DF4000F8A988 /* AppDelegate.swift */; };
+ 		419C780727C3DF4000F8A988 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419C780627C3DF4000F8A988 /* SceneDelegate.swift */; };
+ 		419C780927C3DF4000F8A988 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419C780827C3DF4000F8A988 /* HomeViewController.swift */; };
+@@ -23,6 +25,9 @@
+ 		419C784027C3FE5100F8A988 /* SymbolRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419C783F27C3FE5100F8A988 /* SymbolRepository.swift */; };
+ 		419C784227C4082700F8A988 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419C784127C4082700F8A988 /* HomeViewModel.swift */; };
+ 		419C784827C41B2B00F8A988 /* symbols.json in Resources */ = {isa = PBXBuildFile; fileRef = 419C784727C41B2B00F8A988 /* symbols.json */; };
++		41B3989728536CFE00E137B7 /* PickCurrencyUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3989628536CFE00E137B7 /* PickCurrencyUIViewController.swift */; };
++		41B398992853713E00E137B7 /* HomeHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B398982853713E00E137B7 /* HomeHostingController.swift */; };
++		41B3989D285371B800E137B7 /* HomeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3989C285371B800E137B7 /* HomeUIView.swift */; };
+ 		41DF874827D3B5320056A52E /* SymbolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF874727D3B5320056A52E /* SymbolModel.swift */; };
+ 		41DF874C27D3BA260056A52E /* ExchangeRateGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF874B27D3BA260056A52E /* ExchangeRateGateway.swift */; };
+ 		41DF874E27D3BA950056A52E /* SymbolRepositoryGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF874D27D3BA950056A52E /* SymbolRepositoryGateway.swift */; };
+@@ -56,6 +61,8 @@
+ 
+ /* Begin PBXFileReference section */
+ 		07CE1B1328510036007B23F4 /* PickCurrencyUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickCurrencyUIView.swift; sourceTree = "<group>"; };
++		410A258128623E0B00F2CAD0 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "View+Extensions.swift"; path = "MoneyRates/Presentation/View/UIViews/View+Extensions.swift"; sourceTree = SOURCE_ROOT; };
++		410A258328623EC500F2CAD0 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorView.swift; path = MoneyRates/Presentation/View/UIViews/ActivityIndicatorView.swift; sourceTree = SOURCE_ROOT; };
+ 		419C780127C3DF4000F8A988 /* MoneyRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
+ 		419C780427C3DF4000F8A988 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+ 		419C780627C3DF4000F8A988 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+@@ -75,6 +82,9 @@
+ 		419C783F27C3FE5100F8A988 /* SymbolRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolRepository.swift; sourceTree = "<group>"; };
+ 		419C784127C4082700F8A988 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+ 		419C784727C41B2B00F8A988 /* symbols.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = symbols.json; sourceTree = "<group>"; };
++		41B3989628536CFE00E137B7 /* PickCurrencyUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickCurrencyUIViewController.swift; sourceTree = "<group>"; };
++		41B398982853713E00E137B7 /* HomeHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHostingController.swift; sourceTree = "<group>"; };
++		41B3989C285371B800E137B7 /* HomeUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUIView.swift; sourceTree = "<group>"; };
+ 		41DF874727D3B5320056A52E /* SymbolModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolModel.swift; sourceTree = "<group>"; };
+ 		41DF874B27D3BA260056A52E /* ExchangeRateGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateGateway.swift; sourceTree = "<group>"; };
+ 		41DF874D27D3BA950056A52E /* SymbolRepositoryGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolRepositoryGateway.swift; sourceTree = "<group>"; };
+@@ -118,6 +128,7 @@
+ 			isa = PBXGroup;
+ 			children = (
+ 				07CE1B1328510036007B23F4 /* PickCurrencyUIView.swift */,
++				41B3989C285371B800E137B7 /* HomeUIView.swift */,
+ 			);
+ 			path = UIViews;
+ 			sourceTree = "<group>";
+@@ -207,6 +218,8 @@
+ 		419C784327C408E900F8A988 /* Utilities */ = {
+ 			isa = PBXGroup;
+ 			children = (
++				410A258128623E0B00F2CAD0 /* View+Extensions.swift */,
++				410A258328623EC500F2CAD0 /* ActivityIndicatorView.swift */,
+ 			);
+ 			path = Utilities;
+ 			sourceTree = "<group>";
+@@ -300,6 +313,8 @@
+ 				07CE1B122850FFED007B23F4 /* UIViews */,
+ 				419C780827C3DF4000F8A988 /* HomeViewController.swift */,
+ 				41F9F31F27D0FC8B00312361 /* PickCurrencyViewController.swift */,
++				41B3989628536CFE00E137B7 /* PickCurrencyUIViewController.swift */,
++				41B398982853713E00E137B7 /* HomeHostingController.swift */,
+ 			);
+ 			path = View;
+ 			sourceTree = "<group>";
+@@ -441,12 +456,16 @@
+ 				41DF875227D3BFEA0056A52E /* ExchangeRateGateWayImpl.swift in Sources */,
+ 				41DF874C27D3BA260056A52E /* ExchangeRateGateway.swift in Sources */,
+ 				419C783D27C3E98500F8A988 /* ExchangeRateService.swift in Sources */,
++				41B3989D285371B800E137B7 /* HomeUIView.swift in Sources */,
+ 				419C780927C3DF4000F8A988 /* HomeViewController.swift in Sources */,
+ 				41DF875027D3BB700056A52E /* SymbolRepositoryGatewayImpl.swift in Sources */,
+ 				41F9F32227D10C1D00312361 /* PickCurrencyViewModel.swift in Sources */,
++				41B398992853713E00E137B7 /* HomeHostingController.swift in Sources */,
+ 				07CE1B1428510036007B23F4 /* PickCurrencyUIView.swift in Sources */,
++				410A258428623EC500F2CAD0 /* ActivityIndicatorView.swift in Sources */,
+ 				41DF874827D3B5320056A52E /* SymbolModel.swift in Sources */,
+ 				41F9F32727D24A5500312361 /* ConversionUseCase.swift in Sources */,
++				410A258228623E0B00F2CAD0 /* View+Extensions.swift in Sources */,
+ 				41F9F32927D25EE800312361 /* ResetDataUseCase.swift in Sources */,
+ 				41F9F31E27D0F39200312361 /* HomeCoordinator.swift in Sources */,
+ 				419C780527C3DF4000F8A988 /* AppDelegate.swift in Sources */,
+@@ -454,6 +473,7 @@
+ 				419C784227C4082700F8A988 /* HomeViewModel.swift in Sources */,
+ 				419C780F27C3DF4000F8A988 /* MoneyRates.xcdatamodeld in Sources */,
+ 				419C783B27C3E6FD00F8A988 /* APISymbolsItem.swift in Sources */,
++				41B3989728536CFE00E137B7 /* PickCurrencyUIViewController.swift in Sources */,
+ 				41F9F32027D0FC8B00312361 /* PickCurrencyViewController.swift in Sources */,
+ 				419C784027C3FE5100F8A988 /* SymbolRepository.swift in Sources */,
+ 				419C780727C3DF4000F8A988 /* SceneDelegate.swift in Sources */,
+@@ -648,7 +668,7 @@
+ 					"@executable_path/Frameworks",
+ 				);
+ 				MARKETING_VERSION = 1.0;
+-				PRODUCT_BUNDLE_IDENTIFIER = org.omar.MoneyRates;
++				PRODUCT_BUNDLE_IDENTIFIER = "org.omar.MoneyRates.swiftui-mixed";
+ 				PRODUCT_NAME = "$(TARGET_NAME)";
+ 				SWIFT_EMIT_LOC_STRINGS = YES;
+ 				SWIFT_VERSION = 5.0;
+@@ -676,7 +696,7 @@
+ 					"@executable_path/Frameworks",
+ 				);
+ 				MARKETING_VERSION = 1.0;
+-				PRODUCT_BUNDLE_IDENTIFIER = org.omar.MoneyRates;
++				PRODUCT_BUNDLE_IDENTIFIER = "org.omar.MoneyRates.swiftui-mixed";
+ 				PRODUCT_NAME = "$(TARGET_NAME)";
+ 				SWIFT_EMIT_LOC_STRINGS = YES;
+ 				SWIFT_VERSION = 5.0;
+diff --git a/MoneyRates/Presentation/Flow/AppCoordinator.swift b/MoneyRates/Presentation/Flow/AppCoordinator.swift
+index d2f5010..37e01b9 100644
+--- a/MoneyRates/Presentation/Flow/AppCoordinator.swift
++++ b/MoneyRates/Presentation/Flow/AppCoordinator.swift
+@@ -27,22 +27,34 @@ final class AppCoordinatorImpl: AppCoordinator {
+             return
+         }
+         
+-        let controller = UIStoryboard.main.instantiateViewController(identifier: "homeController", creator: { coder in
++        navigationController.setViewControllers([getUIController()], animated: false)
++        
++        window.rootViewController = navigationController
++        window.makeKeyAndVisible()
++
++    }
++    
++}
++
++private extension AppCoordinatorImpl {
++    func getController() -> UIViewController {
++       UIStoryboard.main.instantiateViewController(identifier: "homeController", creator: { coder in
+             
+             let viewModel = HomeViewModelImpl()
+             guard let result = HomeViewController(coder: coder, viewModel: viewModel) else {
+                 fatalError("HomeViewController failed")
+             }
+-            viewModel.coordinator = HomeCoordinatorImpl(parentController: result)
++//            viewModel.coordinator = HomeCoordinatorImpl(parentController: result)
+             return result
+             
+         })
+-        
+-        navigationController.setViewControllers([controller], animated: false)
+-        
+-        window.rootViewController = navigationController
+-        window.makeKeyAndVisible()
+-
+     }
+     
++    func getUIController() -> UIViewController {
++        let viewModel = HomeViewModelImpl()
++        let result = HomeHostingController(viewModel: viewModel)
++        viewModel.coordinator = HomeCoordinatorImpl(parentController: result)
++        return result
++    }
+ }
++
+diff --git a/MoneyRates/Presentation/Flow/HomeCoordinator.swift b/MoneyRates/Presentation/Flow/HomeCoordinator.swift
+index 5783d27..836a5b9 100644
+--- a/MoneyRates/Presentation/Flow/HomeCoordinator.swift
++++ b/MoneyRates/Presentation/Flow/HomeCoordinator.swift
+@@ -15,9 +15,9 @@ protocol HomeCoordinator {
+ 
+ final class HomeCoordinatorImpl: HomeCoordinator {
+     
+-    private weak var parentController: HomeViewController!
++    private weak var parentController: HomeHostingController!
+     
+-    init(parentController: HomeViewController) {
++    init(parentController: HomeHostingController) {
+         self.parentController = parentController
+     }
+     
+@@ -46,7 +46,9 @@ extension HomeCoordinatorImpl {
+     }
+     
+     private func getUIController() -> PickCurrencyUIViewController {
+-        return PickCurrencyUIViewController()
++        let viewModel = PickCurrencyViewModelImpl()
++        viewModel.delegate = self
++        return PickCurrencyUIViewController(viewModel: viewModel)
+     }
+ }
+ 
+diff --git a/MoneyRates/Presentation/View/HomeHostingController.swift b/MoneyRates/Presentation/View/HomeHostingController.swift
+new file mode 100644
+index 0000000..8f8c70f
+--- /dev/null
++++ b/MoneyRates/Presentation/View/HomeHostingController.swift
+@@ -0,0 +1,34 @@
++//
++//  HomeHostingController.swift
++//  MoneyRates
++//
++//  Created by Omar Gomez on 10/6/22.
++//
++
++import Foundation
++import SwiftUI
++
++class HomeHostingController: UIHostingController<HomeUIView> {
++    
++    private let viewModel: HomeViewModel
++    
++    init(viewModel: HomeViewModelImpl) {
++        self.viewModel = viewModel
++        super.init(rootView: HomeUIView(viewModel: viewModel))
++    }
++    
++    @MainActor required dynamic init?(coder aDecoder: NSCoder) {
++        fatalError("init(coder:) has not been implemented")
++    }
++    
++}
++
++extension HomeHostingController: PickCurrencyViewModelDelegate {
++    func onSymbolSelected(viewModel: PickCurrencyViewModel, symbol: SymbolModel) {
++        if viewModel.mode == .source {
++            self.viewModel.onSelection(source: symbol)
++        } else {
++            self.viewModel.onSelection(target: symbol)
++        }
++    }
++}
+diff --git a/MoneyRates/Presentation/View/PickCurrencyUIViewController.swift b/MoneyRates/Presentation/View/PickCurrencyUIViewController.swift
+new file mode 100644
+index 0000000..7cb1315
+--- /dev/null
++++ b/MoneyRates/Presentation/View/PickCurrencyUIViewController.swift
+@@ -0,0 +1,20 @@
++//
++//  PickCurrencyUIViewController.swift
++//  MoneyRates
++//
++//  Created by Omar Gomez on 10/6/22.
++//
++
++import Foundation
++import SwiftUI
++
++class PickCurrencyUIViewController: UIHostingController<PickCurrencyUIView> {
++
++    init(viewModel: PickCurrencyViewModel) {
++        super.init(rootView: PickCurrencyUIView(viewModel: viewModel))
++    }
++    
++    @MainActor required dynamic init?(coder aDecoder: NSCoder) {
++        fatalError("init(coder:) has not been implemented")
++    }
++}
+diff --git a/MoneyRates/Presentation/View/PickCurrencyViewController.swift b/MoneyRates/Presentation/View/PickCurrencyViewController.swift
+index c340d16..8c94c2a 100644
+--- a/MoneyRates/Presentation/View/PickCurrencyViewController.swift
++++ b/MoneyRates/Presentation/View/PickCurrencyViewController.swift
+@@ -7,7 +7,6 @@
+ 
+ import UIKit
+ import Combine
+-import SwiftUI
+ 
+ class PickCurrencyViewController: UIViewController {
+ 
+@@ -114,14 +113,3 @@ private extension PickCurrencyViewController {
+         
+     }
+ }
+-
+-class PickCurrencyUIViewController: UIHostingController<PickCurrencyUIView> {
+-
+-    init(){
+-        super.init(rootView: PickCurrencyUIView())
+-    }
+-    
+-    @MainActor required dynamic init?(coder aDecoder: NSCoder) {
+-        fatalError("init(coder:) has not been implemented")
+-    }
+-}
+diff --git a/MoneyRates/Presentation/View/UIViews/ActivityIndicatorView.swift b/MoneyRates/Presentation/View/UIViews/ActivityIndicatorView.swift
+new file mode 100644
+index 0000000..b9ccd5d
+--- /dev/null
++++ b/MoneyRates/Presentation/View/UIViews/ActivityIndicatorView.swift
+@@ -0,0 +1,22 @@
++//
++//  ActivityIndicatorView.swift
++//  MoneyRates
++//
++//  Created by Omar Gomez on 21/6/22.
++//
++
++import SwiftUI
++
++struct ActivityIndicatorView: UIViewRepresentable {
++    
++    typealias UIView = UIActivityIndicatorView
++    var isAnimating: Bool
++    var configuration = { (indicator: UIView) in }
++    
++    func makeUIView(context: UIViewRepresentableContext<Self>) -> UIView { UIView() }
++    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<Self>) {
++        isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
++        configuration(uiView)
++    }
++}
++
+diff --git a/MoneyRates/Presentation/View/UIViews/HomeUIView.swift b/MoneyRates/Presentation/View/UIViews/HomeUIView.swift
+new file mode 100644
+index 0000000..c943c82
+--- /dev/null
++++ b/MoneyRates/Presentation/View/UIViews/HomeUIView.swift
+@@ -0,0 +1,98 @@
++//
++//  HomeUIView.swift
++//  MoneyRates
++//
++//  Created by Omar Gomez on 10/6/22.
++//
++
++import SwiftUI
++import Combine
++
++struct HomeUIView: View {
++    
++    @ObservedObject private var viewModel: HomeViewModelImpl
++    @State private var sourceAmount: String = ""
++    @State private var targetAmount: String = ""
++    @State var errorAlert: Bool = false
++    @FocusState private var sourceFocused: Bool
++    @FocusState private var targetFocused: Bool
++    
++    init(viewModel: HomeViewModelImpl) {
++        self.viewModel = viewModel
++    }
++    
++    var body: some View {
++        HStack {
++            Spacer()
++                .frame(width: 16.0)
++            VStack(spacing: 8.0) {
++                ActivityIndicatorView(isAnimating: viewModel.busy)
++                Spacer()
++                Button(action: {
++                    viewModel.pickSourceEvent()
++                }, label: {
++                    Text(viewModel.sourceTitle)
++                })
++                    .appButtonStyle()
++                TextField("Source amount", text: $sourceAmount)
++                    .focused($sourceFocused)
++                    .onChange(of: sourceAmount, perform: { newValue in
++                        if sourceFocused {
++                            viewModel.onInput(source: newValue)
++                        }
++                    })
++                    .appTextFieldStyle()
++                Spacer()
++                    .frame(height: 8.0)
++                TextField("Target amount", text: $targetAmount)
++                    .focused($targetFocused)
++                    .onChange(of: targetAmount, perform: { newValue in
++                        if targetFocused {
++                            viewModel.onInput(target: newValue)
++                        }
++                    })
++                    .appTextFieldStyle()
++                Button(action: {
++                    viewModel.pickTargetEvent()
++                }, label: {
++                    Text(viewModel.targetTitle)
++                })
++                    .appButtonStyle()
++                Spacer()
++            }
++            Spacer()
++                .frame(width: 16.0)
++        }
++        .onAppear(perform: {
++            viewModel.onLoad()
++        })
++        .onChange(of: viewModel.targetResult, perform: { newValue in
++            if !targetFocused, let text = newValue?.description {
++                targetAmount = text
++            }
++        })
++        .onChange(of: viewModel.sourceResult, perform: { newValue in
++            if !sourceFocused, let text = newValue?.description {
++                sourceAmount = text
++            }
++        })
++        .onChange(of: viewModel.error, perform: { newValue in
++            errorAlert = true
++        })
++        .alert(isPresented: $errorAlert, content: {
++            Alert(title: Text(viewModel.error?.title ?? "--"), message:
++                    Text(viewModel.error?.description ?? "--"),
++                  dismissButton: .cancel())
++        })
++    }
++}
++
++private extension HomeUIView {
++}
++
++struct HomeUIView_Previews: PreviewProvider {
++    static var previews: some View {
++        HomeUIView(viewModel: HomeViewModelImpl())
++    }
++}
++
+diff --git a/MoneyRates/Presentation/View/UIViews/PickCurrencyUIView.swift b/MoneyRates/Presentation/View/UIViews/PickCurrencyUIView.swift
+index 276926b..cb20e61 100644
+--- a/MoneyRates/Presentation/View/UIViews/PickCurrencyUIView.swift
++++ b/MoneyRates/Presentation/View/UIViews/PickCurrencyUIView.swift
+@@ -6,28 +6,58 @@
+ //
+ 
+ import SwiftUI
++import Combine
+ 
+ struct PickCurrencyUIView: View {
+     
+     class Model: ObservableObject {
+         
+         private var viewModel: PickCurrencyViewModel?
++        @Published var symbols: [SymbolModel] = []
+         
++        //Inputs
++        private let loadSubject = PassthroughSubject<Void, Never>()
++        private let onSelectionSubject = PassthroughSubject<Int, Never>()
++        private let cancelSubject = PassthroughSubject<Void, Never>()
++        private var searchSubject = PassthroughSubject<String, Never>()
++
+         init(viewModel: PickCurrencyViewModel? = nil) {
+             self.viewModel = viewModel
+         }
++        
+     }
+     
+-    private let model: Model
+-    
++    @ObservedObject private var model: Model
++    @State private var searchText: String
+     
+-    init(viewModel: PickCurrencyViewModel? = nil) {
++    init(viewModel: PickCurrencyViewModel? = PickCurrencyViewModelImpl()) {
+         self.model = Model(viewModel: viewModel)
++        self.searchText = ""
+     }
+     
++    private typealias RowItem = (index: Int, item: SymbolModel)
++    
+     var body: some View {
+-        Text("Omar Gomez 🎊")
++        let items = (0..<model.symbols.count).map{$0}.map({RowItem(index: $0, self.model.symbols[$0])})
++        VStack {
++            SearchBar(text: $searchText)
++                .padding(.top, 30)
++            List(items, id: \.item.id) { symbolItem in
++                Button(action: {
++                    self.model.onSelection(symbolItem.index)
++                }) {
++                    Text(symbolItem.item.description)
++                }
++            }
++            .onAppear(perform: {
++                self.model.onLoad()
++            })
++            .onChange(of: searchText) { newValue in
++                self.model.onQuery(newValue)
++            }
++        }
+     }
++    
+ }
+ 
+ struct PickCurrencyUIView_Previews: PreviewProvider {
+@@ -37,5 +67,81 @@ struct PickCurrencyUIView_Previews: PreviewProvider {
+ }
+ 
+ extension PickCurrencyUIView.Model {
++
++    func onLoad() {
++        let output = viewModel!.bind(input: PickCurrencyViewInput(
++            onLoad: loadSubject.eraseToAnyPublisher(),
++            onSelection: onSelectionSubject.eraseToAnyPublisher(),
++            cancelSearch: cancelSubject.eraseToAnyPublisher(),
++            search: searchSubject.eraseToAnyPublisher()))
++        
++        bind(output: output)
++        self.loadSubject.send()
++    }
+     
++    func onQuery(_ text: String) {
++        searchSubject.send(text)
++    }
++
++    func onSelection(_ index: Int) {
++        self.onSelectionSubject.send(index)
++    }
++
++    func bind(output: PickCurrencyViewOutput) {
++        output.symbols
++            .assign(to: &$symbols)
++        
++        #if false
++        output.searchEnabled
++            .receive(on: RunLoop.main)
++            .sink(receiveValue: { [weak self] _ in
++                self?.searchBar.text = nil
++                self?.searchBar.resignFirstResponder()
++            })
++            .store(in: &cancellables)
++
++        output.error
++            .compactMap{ $0 }
++            .receive(on: RunLoop.main)
++            .sink { (error) in
++                self.showErrorAlert(title: error.title, message: error.description)
++            }
++            .store(in: &cancellables)
++        #endif
++        
++    }
++}
++
++struct SearchBar: View {
++    @Binding var text: String
++ 
++    @State private var isEditing = false
++ 
++    var body: some View {
++        HStack {
++ 
++            TextField("Search ...", text: $text)
++                .padding(7)
++                .padding(.horizontal, 25)
++                .background(Color(.systemGray6))
++                .cornerRadius(8)
++                .padding(.horizontal, 10)
++                .onTapGesture {
++                    self.isEditing = true
++                }
++ 
++            if isEditing {
++                Button(action: {
++                    self.isEditing = false
++                    self.text = ""
++ 
++                }) {
++                    Text("Cancel")
++                }
++                .padding(.trailing, 10)
++                .transition(.move(edge: .trailing))
++                .animation(.default)
++            }
++        }
++    }
+ }
+diff --git a/MoneyRates/Presentation/View/UIViews/View+Extensions.swift b/MoneyRates/Presentation/View/UIViews/View+Extensions.swift
+new file mode 100644
+index 0000000..2878b14
+--- /dev/null
++++ b/MoneyRates/Presentation/View/UIViews/View+Extensions.swift
+@@ -0,0 +1,45 @@
++//
++//  View+Extensions.swift
++//  MoneyRates
++//
++//  Created by Omar Gomez on 21/6/22.
++//
++
++import SwiftUI
++
++fileprivate struct AppButtonModifier: ViewModifier {
++    func body(content: Content) -> some View {
++        content
++            .frame(height: 64.0)
++            .frame(maxWidth: .infinity)
++            .background(
++                RoundedRectangle(cornerRadius: 4)
++                    .fill(Color(UIColor.systemGray5))
++            )
++        
++    }
++}
++
++fileprivate struct AppTextFieldModifier: ViewModifier {
++    func body(content: Content) -> some View {
++        content
++            .frame(height: 64.0)
++            .multilineTextAlignment(.center)
++            .textFieldStyle(.plain)
++            .font(.system(size: 32, weight: .regular, design: .default))
++            .overlay(
++                RoundedRectangle(cornerRadius: 4)
++                    .stroke(Color(UIColor.systemGray5))
++            )
++    }
++}
++
++extension View {
++    func appButtonStyle() -> some View {
++        self.modifier(AppButtonModifier())
++    }
++    
++    func appTextFieldStyle() -> some View {
++        self.modifier(AppTextFieldModifier())
++    }
++}
+diff --git a/MoneyRates/Presentation/ViewModel/HomeViewModel.swift b/MoneyRates/Presentation/ViewModel/HomeViewModel.swift
+index 58c2a25..f5c3f3a 100644
+--- a/MoneyRates/Presentation/ViewModel/HomeViewModel.swift
++++ b/MoneyRates/Presentation/ViewModel/HomeViewModel.swift
+@@ -8,7 +8,7 @@
+ import Foundation
+ import Combine
+ 
+-struct AmountViewModel: CustomStringConvertible {
++struct AmountViewModel: CustomStringConvertible, Equatable {
+     let value: Double
+     
+     var description: String {
+@@ -27,8 +27,8 @@ struct HomeViewInput {
+ }
+ 
+ struct HomeViewOutput {
+-    let sourceTitle: AnyPublisher<String?, Never>
+-    let targetTitle: AnyPublisher<String?, Never>
++    let sourceTitle: AnyPublisher<String, Never>
++    let targetTitle: AnyPublisher<String, Never>
+     let error: AnyPublisher<ErrorViewModel?, Never>
+     let sourceResult: AnyPublisher<AmountViewModel?, Never>
+     let targetResult: AnyPublisher<AmountViewModel?, Never>
+@@ -47,8 +47,8 @@ protocol HomeViewModel: AnyObject {
+     func onSelection(target: SymbolModel)
+     
+     // Output properties
+-    var sourceTitle: String? { get }
+-    var targetTitle: String? { get }
++    var sourceTitle: String { get }
++    var targetTitle: String { get }
+     var error: ErrorViewModel? { get }
+     var sourceResult: AmountViewModel? { get }
+     var targetResult: AmountViewModel? { get }
+@@ -65,7 +65,7 @@ enum HomeViewModelError: LocalizedError {
+     }
+ }
+ 
+-class HomeViewModelImpl: HomeViewModel {
++class HomeViewModelImpl: HomeViewModel, ObservableObject {
+     func onLoad() {
+         input.onLoad.send( () )
+     }
+@@ -94,8 +94,8 @@ class HomeViewModelImpl: HomeViewModel {
+         input.onTarget.send(target)
+     }
+     
+-    @Published var sourceTitle: String? = nil
+-    @Published var targetTitle: String? = nil
++    @Published var sourceTitle: String = "Pick Source Currency"
++    @Published var targetTitle: String = "Pick Target Currency"
+     @Published var error: ErrorViewModel? = nil
+     @Published var sourceResult: AmountViewModel? = nil
+     @Published var targetResult: AmountViewModel? = nil
+@@ -155,6 +155,7 @@ class HomeViewModelImpl: HomeViewModel {
+                     }
+             })
+             .switchToLatest()
++            .receive(on: RunLoop.main)
+             .sink(receiveValue: { _ in
+                 self.busy = false
+             })
+@@ -225,6 +226,7 @@ private extension HomeViewModelImpl {
+                 })
+             })
+             .switchToLatest()
++            . receive(on: RunLoop.main)
+             .handleEvents(receiveOutput: { _ in
+                 self.busy = false
+             })
+diff --git a/MoneyRates/Presentation/ViewModel/PickCurrencyViewModel.swift b/MoneyRates/Presentation/ViewModel/PickCurrencyViewModel.swift
+index c40a7ce..abd2afd 100644
+--- a/MoneyRates/Presentation/ViewModel/PickCurrencyViewModel.swift
++++ b/MoneyRates/Presentation/ViewModel/PickCurrencyViewModel.swift
+@@ -8,7 +8,7 @@
+ import Foundation
+ import Combine
+ 
+-struct ErrorViewModel {
++struct ErrorViewModel: Equatable {
+     let title: String
+     let description: String
+ }
