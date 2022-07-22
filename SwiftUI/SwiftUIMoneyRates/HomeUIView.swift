@@ -9,6 +9,25 @@ import SwiftUI
 import Combine
 import ModelLibrary
 
+private class HomeCoordinatorImpl: HomeCoordinator {
+    
+    struct Output {
+        let onPickEvent = PassthroughSubject<PickCurrencyModeEnum, Never>()
+    }
+    
+    let output = Output()
+    
+    func goToPickSource() {
+        output.onPickEvent.send(.source)
+    }
+    
+    func goToPickTarget() {
+        output.onPickEvent.send(.target)
+    }
+    
+    
+}
+
 struct HomeUIView: View {
     
     @ObservedObject private var viewModel: HomeViewModelImpl
@@ -17,9 +36,14 @@ struct HomeUIView: View {
     @State var errorAlert: Bool = false
     @FocusState private var sourceFocused: Bool
     @FocusState private var targetFocused: Bool
+    @State private var showCurrencyPicker = false
+    @State private var pickerMode: PickCurrencyModeEnum?
+    private let homeCoordinator: HomeCoordinatorImpl
     
-    init(viewModel: HomeViewModelImpl) {
+    init(viewModel: HomeViewModelImpl = HomeViewModelImpl() ) {
         self.viewModel = viewModel
+        homeCoordinator = HomeCoordinatorImpl()
+        self.viewModel.coordinator = homeCoordinator
     }
     
     var body: some View {
@@ -63,6 +87,13 @@ struct HomeUIView: View {
             }
             Spacer()
                 .frame(width: 16.0)
+        }.sheet(isPresented: $showCurrencyPicker, onDismiss: {
+            print("")
+        }) {
+            pickerView()
+        }
+        .onReceive( homeCoordinator.output.onPickEvent ) { mode in
+            pickerMode = mode
         }
         .onAppear(perform: {
             viewModel.input.onLoad.send()
@@ -80,6 +111,9 @@ struct HomeUIView: View {
         .onChange(of: viewModel.error, perform: { newValue in
             errorAlert = true
         })
+        .onChange(of: pickerMode, perform: { newValue in
+            showCurrencyPicker =  (newValue != nil)
+        })
         .alert(isPresented: $errorAlert, content: {
             Alert(title: Text(viewModel.error?.title ?? "--"), message:
                     Text(viewModel.error?.description ?? "--"),
@@ -89,6 +123,19 @@ struct HomeUIView: View {
 }
 
 private extension HomeUIView {
+    func pickerView() -> some View {
+        let model = PickCurrencyViewModelImpl(mode: pickerMode!)
+        return PickCurrencyUIView(viewModel: model)
+            .onReceive( model.output.selection, perform: { value in
+                showCurrencyPicker = false
+                pickerMode = nil
+                if value.mode == .source {
+                    viewModel.input.onSource.send(value.symbol)
+                } else {
+                    viewModel.input.onTarget.send(value.symbol)
+                }
+            })
+    }
 }
 
 struct HomeUIView_Previews: PreviewProvider {
