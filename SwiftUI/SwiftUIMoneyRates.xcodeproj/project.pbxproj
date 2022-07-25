@@ -21,15 +21,15 @@
 
 /* Begin PBXFileReference section */
 		0758A6FA2889CBD40073FF70 /* SwiftUIMoneyRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIMoneyRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0758A6FD2889CBD40073FF70 /* SwiftUIMoneyRatesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIMoneyRatesApp.swift; sourceTree = "<group>"; };
+		0758A6FD2889CBD40073FF70 /* SwiftUIMoneyRatesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftUIMoneyRatesApp.swift; path = ../../CatalystConverter/Shared/SwiftUIMoneyRatesApp.swift; sourceTree = "<group>"; };
 		0758A6FF2889CBD40073FF70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0758A7012889CBD60073FF70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0758A7042889CBD60073FF70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0758A70D2889CC5F0073FF70 /* ModelLibrary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ModelLibrary; path = ../ModelLibrary; sourceTree = "<group>"; };
-		0758A70F2889D0690073FF70 /* HomeUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeUIView.swift; sourceTree = "<group>"; };
-		0758A7102889D0690073FF70 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
-		0758A7112889D06A0073FF70 /* PickCurrencyUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickCurrencyUIView.swift; sourceTree = "<group>"; };
-		0758A7122889D06A0073FF70 /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		0758A70F2889D0690073FF70 /* HomeUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeUIView.swift; path = ../../CatalystConverter/Shared/HomeUIView.swift; sourceTree = "<group>"; };
+		0758A7102889D0690073FF70 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorView.swift; path = ../../CatalystConverter/Shared/ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		0758A7112889D06A0073FF70 /* PickCurrencyUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickCurrencyUIView.swift; path = ../../CatalystConverter/Shared/PickCurrencyUIView.swift; sourceTree = "<group>"; };
+		0758A7122889D06A0073FF70 /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "View+Extensions.swift"; path = "../../CatalystConverter/Shared/View+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

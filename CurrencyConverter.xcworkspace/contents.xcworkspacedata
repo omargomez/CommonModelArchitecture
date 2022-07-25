@@ -2,6 +2,51 @@
 <Workspace
    version = "1.0">
    <Group
+      location = "group:CatalystConverter"
+      name = "CatalystConverter">
+      <Group
+         location = "group:macOS"
+         name = "macOS">
+         <FileRef
+            location = "group:macOS.entitlements">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Shared"
+         name = "Shared">
+         <Group
+            location = "group:Assets.xcassets"
+            name = "Assets.xcassets">
+            <Group
+               location = "group:AppIcon.appiconset"
+               name = "AppIcon.appiconset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:AccentColor.colorset"
+               name = "AccentColor.colorset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:CatalystConverterApp.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ContentView.swift">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:CatalystConverter.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
       location = "group:SwiftUI"
       name = "SwiftUI">
       <FileRef

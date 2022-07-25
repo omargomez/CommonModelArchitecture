@@ -6,6 +6,18 @@
 //
 
 import SwiftUI
+import Foundation
+
+private extension Color {
+    
+#if os(iOS)
+    static let buttonFillColor = Color(UIColor.systemGray5)
+    static let textFieldBorderStrokeColor = Color(UIColor.systemGray5)
+#else
+    static let buttonFillColor = Color(NSColor.shadowColor)
+    static let textFieldBorderStrokeColor = Color(NSColor.shadowColor)
+#endif
+}
 
 fileprivate struct AppButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
@@ -14,7 +26,7 @@ fileprivate struct AppButtonModifier: ViewModifier {
             .frame(maxWidth: .infinity)
             .background(
                 RoundedRectangle(cornerRadius: 4)
-                    .fill(Color(UIColor.systemGray5))
+                    .fill(Color.buttonFillColor)
             )
         
     }
@@ -29,7 +41,7 @@ fileprivate struct AppTextFieldModifier: ViewModifier {
             .font(.system(size: 32, weight: .regular, design: .default))
             .overlay(
                 RoundedRectangle(cornerRadius: 4)
-                    .stroke(Color(UIColor.systemGray5))
+                    .stroke(Color.textFieldBorderStrokeColor)
             )
     }
 }
