@@ -8,7 +8,7 @@
 import SwiftUI
 import Foundation
 
-private extension Color {
+extension Color {
     
 #if os(iOS)
     static let buttonFillColor = Color(UIColor.systemGray5)

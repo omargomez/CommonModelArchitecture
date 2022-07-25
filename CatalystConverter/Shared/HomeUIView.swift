@@ -47,47 +47,52 @@ struct HomeUIView: View {
     }
     
     var body: some View {
-        HStack {
-            Spacer()
-                .frame(width: 16.0)
-            VStack(spacing: 8.0) {
-                ActivityIndicatorView(isAnimating: viewModel.busy)
+        ZStack {
+            HStack {
                 Spacer()
-                Button(action: {
-                    viewModel.input.pickSourceEvent.send()
-                }, label: {
-                    Text(viewModel.sourceTitle)
-                })
-                    .appButtonStyle()
-                TextField("Source amount", text: $sourceAmount)
-                    .focused($sourceFocused)
-                    .onChange(of: sourceAmount, perform: { newValue in
-                        if sourceFocused {
-                            viewModel.input.onInputSource.send(newValue)
-                        }
+                    .frame(width: 16.0)
+                VStack(spacing: 8.0) {
+                    Spacer()
+                    Button(action: {
+                        viewModel.input.pickSourceEvent.send()
+                    }, label: {
+                        Text(viewModel.sourceTitle)
                     })
-                    .appTextFieldStyle()
-                Spacer()
-                    .frame(height: 8.0)
-                TextField("Target amount", text: $targetAmount)
-                    .focused($targetFocused)
-                    .onChange(of: targetAmount, perform: { newValue in
-                        if targetFocused {
-                            viewModel.input.onInputTarget.send(newValue)
-                        }
-                    })
-                    .appTextFieldStyle()
-                Button(action: {
-                    viewModel.input.pickTargetEvent.send()
-                }, label: {
-                    Text(viewModel.targetTitle)
-                })
                     .appButtonStyle()
+                    TextField("Source amount", text: $sourceAmount)
+                        .focused($sourceFocused)
+                        .onChange(of: sourceAmount, perform: { newValue in
+                            if sourceFocused {
+                                viewModel.input.onInputSource.send(newValue)
+                            }
+                        })
+                        .appTextFieldStyle()
+                    Spacer()
+                        .frame(height: 8.0)
+                    TextField("Target amount", text: $targetAmount)
+                        .focused($targetFocused)
+                        .onChange(of: targetAmount, perform: { newValue in
+                            if targetFocused {
+                                viewModel.input.onInputTarget.send(newValue)
+                            }
+                        })
+                        .appTextFieldStyle()
+                    Button(action: {
+                        viewModel.input.pickTargetEvent.send()
+                    }, label: {
+                        Text(viewModel.targetTitle)
+                    })
+                    .appButtonStyle()
+                    Spacer()
+                }
                 Spacer()
+                    .frame(width: 16.0)
             }
-            Spacer()
-                .frame(width: 16.0)
-        }.sheet(isPresented: $showCurrencyPicker, onDismiss: {
+            if viewModel.busy {
+                ProgressView()
+            }
+        }
+        .sheet(isPresented: $showCurrencyPicker, onDismiss: {
             print("")
         }) {
             pickerView()

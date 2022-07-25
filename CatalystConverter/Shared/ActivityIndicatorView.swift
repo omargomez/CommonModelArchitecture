@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#if os(iOS)
 struct ActivityIndicatorView: UIViewRepresentable {
     
     typealias UIView = UIActivityIndicatorView
@@ -19,4 +20,5 @@ struct ActivityIndicatorView: UIViewRepresentable {
         configuration(uiView)
     }
 }
+#endif
 
