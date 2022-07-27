@@ -23,9 +23,7 @@ struct PickCurrencyUIView: View {
     
     var body: some View {
         let items = (0..<viewModel.currencyCount()).map({RowItem(index: $0, self.viewModel.symbolAt(at: $0))})
-        VStack {
-            SearchBar(text: $searchText)
-                .padding(.top, 30)
+        NavigationView {
             List(items, id: \.item.id) { symbolItem in
                 Text(symbolItem.item.description)
                     .onTapGesture {
@@ -33,7 +31,11 @@ struct PickCurrencyUIView: View {
                     }
             }
             .listStyle(.plain)
+            #if !os(macOS)
+            .navigationBarTitle(Text("Select Currency"), displayMode: .inline)
+            #endif
         }
+        .searchable(text: $searchText)
         .onAppear(perform: {
             self.viewModel.input.onLoad.send()
         })
@@ -41,45 +43,10 @@ struct PickCurrencyUIView: View {
             self.viewModel.input.search.send(newValue)
         }
     }
-    
 }
 
 struct PickCurrencyUIView_Previews: PreviewProvider {
     static var previews: some View {
         PickCurrencyUIView()
-    }
-}
-
-struct SearchBar: View {
-    @Binding var text: String
-    
-    @State private var isEditing = false
-    
-    var body: some View {
-        HStack {
-            
-            TextField("Search ...", text: $text)
-                .padding(7)
-                .padding(.horizontal, 25)
-                .background(Color.textFieldBorderStrokeColor)
-                .cornerRadius(8)
-                .padding(.horizontal, 10)
-                .onTapGesture {
-                    self.isEditing = true
-                }
-            
-            if isEditing {
-                Button(action: {
-                    self.isEditing = false
-                    self.text = ""
-                    
-                }) {
-                    Text("Cancel")
-                }
-                .padding(.trailing, 10)
-                .transition(.move(edge: .trailing))
-                .animation(.default)
-            }
-        }
     }
 }
