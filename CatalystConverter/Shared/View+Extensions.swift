@@ -17,6 +17,8 @@ extension Color {
 #else
     static let buttonFillColor = Color(UIColor.systemGray5)
     static let textFieldBorderStrokeColor = Color(UIColor.systemGray5)
+    static let viewBackground = Color(UIColor.systemBackground)
+    static let label = Color(UIColor.label)
 #endif
 }
 
@@ -51,6 +53,18 @@ fileprivate struct AppButtonStyle: ButtonStyle {
 }
 #endif
 
+fileprivate struct AppEmbeddedListButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .multilineTextAlignment(.leading)
+            .font(configuration.isPressed ? Font.headline : Font.body)
+#if os(iOS)
+            .background(Color.viewBackground)
+#endif
+    }
+}
+
 fileprivate struct AppTextFieldModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -76,5 +90,18 @@ extension View {
     
     func appTextFieldStyle() -> some View {
         self.modifier(AppTextFieldModifier())
+    }
+    
+    func appEmbeddedListButtonStyle() -> some View {
+        buttonStyle(AppEmbeddedListButtonStyle())
+    }
+    
+    func appDialogTitleStyle() -> some View {
+        self.font(Font.headline)
+            .padding(.bottom, 8)
+    }
+
+    func appDialogButtonStyle() -> some View {
+        self.buttonStyle(.borderedProminent)
     }
 }

@@ -130,7 +130,6 @@ struct HomeUIView: View {
 
 private extension HomeUIView {
     func pickerView() -> some View {
-        print("### Picker called!!!")
 #if os(macOS)
         return macosPicker()
 #elseif os(iOS)

@@ -25,10 +25,10 @@ struct PickCurrencyUIView: View {
         let items = (0..<viewModel.currencyCount()).map({RowItem(index: $0, self.viewModel.symbolAt(at: $0))})
         NavigationView {
             List(items, id: \.item.id) { symbolItem in
-                Text(symbolItem.item.description)
-                    .onTapGesture {
+                Button(symbolItem.item.description, action: {
                         self.viewModel.input.onSelection.send(symbolItem.index)
-                    }
+                })
+                .appEmbeddedListButtonStyle()
             }
             .listStyle(.plain)
             #if !os(macOS)
@@ -48,11 +48,11 @@ struct PickCurrencyUIView: View {
 #if os(macOS)
 struct DesktopPickCurrencyUIView: View {
     @ObservedObject private var viewModel: PickCurrencyViewModelImpl
-    @State private var searchText: String
+    @State private var searchText: String = ""
+    @Environment(\.dismiss) private var dismiss
     
     init(viewModel: PickCurrencyViewModelImpl = PickCurrencyViewModelImpl(mode: .source)) {
         self.viewModel = viewModel
-        self.searchText = ""
         self.viewModel.input.onLoad.send()
     }
     
@@ -61,23 +61,39 @@ struct DesktopPickCurrencyUIView: View {
     var body: some View {
         let items = (0..<viewModel.currencyCount()).map({RowItem(index: $0, self.viewModel.symbolAt(at: $0))})
         VStack {
-            TextField("", text: $searchText)
+            Text("Select currency")
+                .appDialogTitleStyle()
+            searchField()
             List(items, id: \.item.id) { symbolItem in
-                Text(symbolItem.item.description)
-                    .onTapGesture {
+                Button(symbolItem.item.description, action: {
                         self.viewModel.input.onSelection.send(symbolItem.index)
-                    }
+                })
+                .appEmbeddedListButtonStyle()
             }
             .listStyle(.plain)
+            Button("Close", action: {
+                dismiss()
+            })
+            .appDialogButtonStyle()
         }
-        .onAppear(perform: {
-            // nothing
-        })
         .onChange(of: searchText) { newValue in
             self.viewModel.input.search.send(newValue)
         }
         .padding()
-        .frame(minWidth: 300, minHeight: 200)
+        .frame(minWidth: 300, minHeight: 400)
+    }
+}
+
+private extension DesktopPickCurrencyUIView {
+    func searchField() -> some View {
+        TextField("Search ...", text: $searchText)
+            .padding(.leading, 25)
+            .overlay(
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(Color(nsColor: NSColor.labelColor))
+                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+            )
+            .padding(.horizontal, 10)
     }
 }
 #endif
