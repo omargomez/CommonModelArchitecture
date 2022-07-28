@@ -10,15 +10,17 @@ import Foundation
 
 extension Color {
     
-#if os(iOS)
+#if os(macOS)
+    static let buttonFillColor = Color(NSColor.systemGray)
+    static let buttonPressedColor = Color(NSColor.controlAccentColor)
+    static let textFieldBorderStrokeColor = Color(NSColor.shadowColor)
+#else
     static let buttonFillColor = Color(UIColor.systemGray5)
     static let textFieldBorderStrokeColor = Color(UIColor.systemGray5)
-#else
-    static let buttonFillColor = Color(NSColor.shadowColor)
-    static let textFieldBorderStrokeColor = Color(NSColor.shadowColor)
 #endif
 }
 
+#if os(iOS)
 fileprivate struct AppButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -31,6 +33,23 @@ fileprivate struct AppButtonModifier: ViewModifier {
         
     }
 }
+#endif
+
+#if os(macOS)
+fileprivate struct AppButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(height: 64.0)
+            .frame(maxWidth: .infinity)
+            .background(configuration.isPressed ?
+                        Color.buttonPressedColor :
+                            Color.buttonFillColor)
+            .foregroundColor(Color.white)
+            .font(.system(size: 28, weight: .light, design: .default))
+            .cornerRadius(8)
+    }
+}
+#endif
 
 fileprivate struct AppTextFieldModifier: ViewModifier {
     func body(content: Content) -> some View {
@@ -48,7 +67,11 @@ fileprivate struct AppTextFieldModifier: ViewModifier {
 
 extension View {
     func appButtonStyle() -> some View {
+        #if os(iOS)
         self.modifier(AppButtonModifier())
+        #else
+        buttonStyle(AppButtonStyle())
+        #endif
     }
     
     func appTextFieldStyle() -> some View {

@@ -93,7 +93,8 @@ struct HomeUIView: View {
             }
         }
         .sheet(isPresented: $showCurrencyPicker, onDismiss: {
-            print("")
+            showCurrencyPicker = false
+            pickerMode = nil
         }) {
             pickerView()
         }
@@ -129,6 +130,21 @@ struct HomeUIView: View {
 
 private extension HomeUIView {
     func pickerView() -> some View {
+        print("### Picker called!!!")
+#if os(macOS)
+        return macosPicker()
+#elseif os(iOS)
+        return iosPicker()
+#else
+        #error("Not supported platform")
+#endif
+    }
+    
+}
+
+#if os(iOS)
+private extension HomeUIView {
+    func iosPicker() -> some View {
         let model = PickCurrencyViewModelImpl(mode: pickerMode!)
         return PickCurrencyUIView(viewModel: model)
             .onReceive( model.output.selection, perform: { value in
@@ -142,6 +158,26 @@ private extension HomeUIView {
             })
     }
 }
+#endif
+
+#if os(macOS)
+private extension HomeUIView {
+    func macosPicker() -> some View {
+        let model = PickCurrencyViewModelImpl(mode: pickerMode!)
+        return DesktopPickCurrencyUIView(viewModel: model)
+            .onReceive( model.output.selection, perform: { value in
+                showCurrencyPicker = false
+                pickerMode = nil
+                if value.mode == .source {
+                    viewModel.input.onSource.send(value.symbol)
+                } else {
+                    viewModel.input.onTarget.send(value.symbol)
+                }
+            })
+        
+    }
+}
+#endif
 
 struct HomeUIView_Previews: PreviewProvider {
     static var previews: some View {
