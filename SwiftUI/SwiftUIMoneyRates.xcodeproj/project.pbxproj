@@ -12,10 +12,10 @@
 		0758A7022889CBD60073FF70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0758A7012889CBD60073FF70 /* Assets.xcassets */; };
 		0758A7052889CBD60073FF70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0758A7042889CBD60073FF70 /* Preview Assets.xcassets */; };
 		0758A70E2889CC5F0073FF70 /* ModelLibrary in Resources */ = {isa = PBXBuildFile; fileRef = 0758A70D2889CC5F0073FF70 /* ModelLibrary */; };
-		0758A7132889D06A0073FF70 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758A7122889D06A0073FF70 /* View+Extensions.swift */; };
-		0758A7142889D06A0073FF70 /* HomeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758A70F2889D0690073FF70 /* HomeUIView.swift */; };
-		0758A7162889D06A0073FF70 /* PickCurrencyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758A7112889D06A0073FF70 /* PickCurrencyUIView.swift */; };
 		0758A7192889D0EC0073FF70 /* ModelLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 0758A7182889D0EC0073FF70 /* ModelLibrary */; };
+		07623553289847AD00A9CE09 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07623550289847AD00A9CE09 /* View+Extensions.swift */; };
+		07623554289847AD00A9CE09 /* PickCurrencyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07623551289847AD00A9CE09 /* PickCurrencyUIView.swift */; };
+		07623555289847AD00A9CE09 /* HomeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07623552289847AD00A9CE09 /* HomeUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +25,9 @@
 		0758A7012889CBD60073FF70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0758A7042889CBD60073FF70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0758A70D2889CC5F0073FF70 /* ModelLibrary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ModelLibrary; path = ../ModelLibrary; sourceTree = "<group>"; };
-		0758A70F2889D0690073FF70 /* HomeUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeUIView.swift; path = ../../CatalystConverter/Shared/HomeUIView.swift; sourceTree = "<group>"; };
-		0758A7112889D06A0073FF70 /* PickCurrencyUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickCurrencyUIView.swift; path = ../../CatalystConverter/Shared/PickCurrencyUIView.swift; sourceTree = "<group>"; };
-		0758A7122889D06A0073FF70 /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "View+Extensions.swift"; path = "../../CatalystConverter/Shared/View+Extensions.swift"; sourceTree = "<group>"; };
+		07623550289847AD00A9CE09 /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		07623551289847AD00A9CE09 /* PickCurrencyUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickCurrencyUIView.swift; sourceTree = "<group>"; };
+		07623552289847AD00A9CE09 /* HomeUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +63,9 @@
 		0758A6FC2889CBD40073FF70 /* SwiftUIMoneyRates */ = {
 			isa = PBXGroup;
 			children = (
-				0758A70F2889D0690073FF70 /* HomeUIView.swift */,
-				0758A7112889D06A0073FF70 /* PickCurrencyUIView.swift */,
-				0758A7122889D06A0073FF70 /* View+Extensions.swift */,
+				07623552289847AD00A9CE09 /* HomeUIView.swift */,
+				07623551289847AD00A9CE09 /* PickCurrencyUIView.swift */,
+				07623550289847AD00A9CE09 /* View+Extensions.swift */,
 				0758A6FD2889CBD40073FF70 /* SwiftUIMoneyRatesApp.swift */,
 				0758A6FF2889CBD40073FF70 /* ContentView.swift */,
 				0758A7012889CBD60073FF70 /* Assets.xcassets */,
@@ -164,9 +164,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0758A7002889CBD40073FF70 /* ContentView.swift in Sources */,
-				0758A7162889D06A0073FF70 /* PickCurrencyUIView.swift in Sources */,
-				0758A7142889D06A0073FF70 /* HomeUIView.swift in Sources */,
-				0758A7132889D06A0073FF70 /* View+Extensions.swift in Sources */,
+				07623553289847AD00A9CE09 /* View+Extensions.swift in Sources */,
+				07623555289847AD00A9CE09 /* HomeUIView.swift in Sources */,
+				07623554289847AD00A9CE09 /* PickCurrencyUIView.swift in Sources */,
 				0758A6FE2889CBD40073FF70 /* SwiftUIMoneyRatesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
