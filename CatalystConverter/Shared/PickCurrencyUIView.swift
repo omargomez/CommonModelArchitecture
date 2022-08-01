@@ -28,7 +28,6 @@ struct PickCurrencyUIView: View {
                 Button(symbolItem.item.description, action: {
                         self.viewModel.input.onSelection.send(symbolItem.index)
                 })
-                .appEmbeddedListButtonStyle()
             }
             .listStyle(.plain)
             #if !os(macOS)

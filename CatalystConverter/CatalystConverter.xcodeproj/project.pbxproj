@@ -20,8 +20,6 @@
 		07C02300288EAD5B008E606D /* HomeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C022FE288EAD5B008E606D /* HomeUIView.swift */; };
 		07C02301288EAD5B008E606D /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C022FC288EAD5B008E606D /* View+Extensions.swift */; };
 		07C02302288EAD5B008E606D /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C022FC288EAD5B008E606D /* View+Extensions.swift */; };
-		07C02303288EAD5B008E606D /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C022FA288EAD5B008E606D /* ActivityIndicatorView.swift */; };
-		07C02304288EAD5B008E606D /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C022FA288EAD5B008E606D /* ActivityIndicatorView.swift */; };
 		07C02305288EAD5B008E606D /* PickCurrencyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C022FB288EAD5B008E606D /* PickCurrencyUIView.swift */; };
 		07C02306288EAD5B008E606D /* PickCurrencyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C022FB288EAD5B008E606D /* PickCurrencyUIView.swift */; };
 /* End PBXBuildFile section */
@@ -34,7 +32,6 @@
 		07C022E2288EAC76008E606D /* CatalystConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatalystConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C022E4288EAC76008E606D /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		07C022F3288EACCD008E606D /* ModelLibrary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ModelLibrary; path = ../ModelLibrary; sourceTree = "<group>"; };
-		07C022FA288EAD5B008E606D /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		07C022FB288EAD5B008E606D /* PickCurrencyUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickCurrencyUIView.swift; sourceTree = "<group>"; };
 		07C022FC288EAD5B008E606D /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		07C022FE288EAD5B008E606D /* HomeUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeUIView.swift; sourceTree = "<group>"; };
@@ -77,7 +74,6 @@
 				07C022FE288EAD5B008E606D /* HomeUIView.swift */,
 				07C022FB288EAD5B008E606D /* PickCurrencyUIView.swift */,
 				07C022FC288EAD5B008E606D /* View+Extensions.swift */,
-				07C022FA288EAD5B008E606D /* ActivityIndicatorView.swift */,
 				07C022D5288EAC74008E606D /* CatalystConverterApp.swift */,
 				07C022D6288EAC74008E606D /* ContentView.swift */,
 				07C022D7288EAC76008E606D /* Assets.xcassets */,
@@ -215,7 +211,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				07C022E7288EAC76008E606D /* ContentView.swift in Sources */,
-				07C02303288EAD5B008E606D /* ActivityIndicatorView.swift in Sources */,
 				07C02305288EAD5B008E606D /* PickCurrencyUIView.swift in Sources */,
 				07C022E5288EAC76008E606D /* CatalystConverterApp.swift in Sources */,
 				07C02301288EAD5B008E606D /* View+Extensions.swift in Sources */,
@@ -228,7 +223,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				07C022E8288EAC76008E606D /* ContentView.swift in Sources */,
-				07C02304288EAD5B008E606D /* ActivityIndicatorView.swift in Sources */,
 				07C02306288EAD5B008E606D /* PickCurrencyUIView.swift in Sources */,
 				07C022E6288EAC76008E606D /* CatalystConverterApp.swift in Sources */,
 				07C02302288EAD5B008E606D /* View+Extensions.swift in Sources */,
