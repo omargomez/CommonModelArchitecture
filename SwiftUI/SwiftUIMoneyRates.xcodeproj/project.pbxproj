@@ -14,7 +14,6 @@
 		0758A70E2889CC5F0073FF70 /* ModelLibrary in Resources */ = {isa = PBXBuildFile; fileRef = 0758A70D2889CC5F0073FF70 /* ModelLibrary */; };
 		0758A7132889D06A0073FF70 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758A7122889D06A0073FF70 /* View+Extensions.swift */; };
 		0758A7142889D06A0073FF70 /* HomeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758A70F2889D0690073FF70 /* HomeUIView.swift */; };
-		0758A7152889D06A0073FF70 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758A7102889D0690073FF70 /* ActivityIndicatorView.swift */; };
 		0758A7162889D06A0073FF70 /* PickCurrencyUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758A7112889D06A0073FF70 /* PickCurrencyUIView.swift */; };
 		0758A7192889D0EC0073FF70 /* ModelLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 0758A7182889D0EC0073FF70 /* ModelLibrary */; };
 /* End PBXBuildFile section */
@@ -27,7 +26,6 @@
 		0758A7042889CBD60073FF70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0758A70D2889CC5F0073FF70 /* ModelLibrary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ModelLibrary; path = ../ModelLibrary; sourceTree = "<group>"; };
 		0758A70F2889D0690073FF70 /* HomeUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeUIView.swift; path = ../../CatalystConverter/Shared/HomeUIView.swift; sourceTree = "<group>"; };
-		0758A7102889D0690073FF70 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorView.swift; path = ../../CatalystConverter/Shared/ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		0758A7112889D06A0073FF70 /* PickCurrencyUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickCurrencyUIView.swift; path = ../../CatalystConverter/Shared/PickCurrencyUIView.swift; sourceTree = "<group>"; };
 		0758A7122889D06A0073FF70 /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "View+Extensions.swift"; path = "../../CatalystConverter/Shared/View+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,7 +66,6 @@
 				0758A70F2889D0690073FF70 /* HomeUIView.swift */,
 				0758A7112889D06A0073FF70 /* PickCurrencyUIView.swift */,
 				0758A7122889D06A0073FF70 /* View+Extensions.swift */,
-				0758A7102889D0690073FF70 /* ActivityIndicatorView.swift */,
 				0758A6FD2889CBD40073FF70 /* SwiftUIMoneyRatesApp.swift */,
 				0758A6FF2889CBD40073FF70 /* ContentView.swift */,
 				0758A7012889CBD60073FF70 /* Assets.xcassets */,
@@ -167,7 +164,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0758A7002889CBD40073FF70 /* ContentView.swift in Sources */,
-				0758A7152889D06A0073FF70 /* ActivityIndicatorView.swift in Sources */,
 				0758A7162889D06A0073FF70 /* PickCurrencyUIView.swift in Sources */,
 				0758A7142889D06A0073FF70 /* HomeUIView.swift in Sources */,
 				0758A7132889D06A0073FF70 /* View+Extensions.swift in Sources */,

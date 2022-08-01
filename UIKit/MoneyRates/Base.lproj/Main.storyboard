@@ -62,7 +62,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="7rr-VV-Fu2">
-                                <rect key="frame" x="352.5" y="44" width="20" height="20"/>
+                                <rect key="frame" x="197" y="443" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -71,20 +71,20 @@
                             <constraint firstItem="sVp-pr-ykt" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2ph-aB-r8y"/>
                             <constraint firstItem="0lL-2i-cF3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="AG2-0o-pNc"/>
                             <constraint firstItem="f6p-24-Jlg" firstAttribute="width" secondItem="sVp-pr-ykt" secondAttribute="width" id="AUD-TX-lJ0"/>
+                            <constraint firstItem="7rr-VV-Fu2" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="DZC-pl-ine"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wec-MM-fQk" secondAttribute="trailing" id="EM6-92-NZd"/>
                             <constraint firstItem="f6p-24-Jlg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JNK-df-osE"/>
                             <constraint firstItem="sVp-pr-ykt" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="K4R-Ob-2j0"/>
                             <constraint firstItem="xeL-hA-5MB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="L0Z-lb-v7y"/>
                             <constraint firstItem="f6p-24-Jlg" firstAttribute="top" secondItem="xeL-hA-5MB" secondAttribute="bottom" constant="8" symbolic="YES" id="Oxo-k6-Oix"/>
                             <constraint firstItem="wec-MM-fQk" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="QxL-yh-8Ab"/>
-                            <constraint firstItem="7rr-VV-Fu2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="b8g-rX-suK"/>
                             <constraint firstItem="xeL-hA-5MB" firstAttribute="width" secondItem="sVp-pr-ykt" secondAttribute="width" id="b9d-Cf-96N"/>
                             <constraint firstItem="wec-MM-fQk" firstAttribute="top" secondItem="sVp-pr-ykt" secondAttribute="bottom" constant="16" id="bXu-02-GAj"/>
-                            <constraint firstItem="7rr-VV-Fu2" firstAttribute="trailing" secondItem="0lL-2i-cF3" secondAttribute="trailing" id="eKm-yA-ost"/>
                             <constraint firstItem="0lL-2i-cF3" firstAttribute="width" secondItem="sVp-pr-ykt" secondAttribute="width" id="gS7-QZ-4u4"/>
                             <constraint firstItem="xeL-hA-5MB" firstAttribute="top" secondItem="wec-MM-fQk" secondAttribute="bottom" constant="7.5" id="r5u-Uw-1sf"/>
                             <constraint firstItem="0lL-2i-cF3" firstAttribute="height" secondItem="sVp-pr-ykt" secondAttribute="height" id="slW-Wd-291"/>
                             <constraint firstItem="wec-MM-fQk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tIX-mZ-DBg"/>
+                            <constraint firstItem="7rr-VV-Fu2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tgP-X9-V2Z"/>
                             <constraint firstItem="f6p-24-Jlg" firstAttribute="height" secondItem="xeL-hA-5MB" secondAttribute="height" id="upO-F5-pJn"/>
                             <constraint firstItem="sVp-pr-ykt" firstAttribute="top" secondItem="0lL-2i-cF3" secondAttribute="bottom" constant="8" id="v5W-gM-WoF"/>
                         </constraints>
