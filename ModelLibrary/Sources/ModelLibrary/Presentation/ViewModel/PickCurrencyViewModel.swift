@@ -106,6 +106,7 @@ final public class PickCurrencyViewModelImpl: PickCurrencyViewModel, ObservableO
                 switch value {
                 case .success(let symbols):
                     self.symbols = symbols
+                    print("sunbol sink: \(self.symbols.count)")
                 case .failure(let error):
                     self.error = ErrorViewModel(error: error)
                 }
