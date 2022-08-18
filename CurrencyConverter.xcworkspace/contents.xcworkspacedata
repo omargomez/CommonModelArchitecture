@@ -4,67 +4,9 @@
    <Group
       location = "group:Appkit"
       name = "Appkit">
-      <Group
-         location = "group:AppkitConverter"
-         name = "AppkitConverter">
-         <FileRef
-            location = "group:ViewController.swift">
-         </FileRef>
-         <Group
-            location = "group:Assets.xcassets"
-            name = "Assets.xcassets">
-            <Group
-               location = "group:AppIcon.appiconset"
-               name = "AppIcon.appiconset">
-               <FileRef
-                  location = "group:Contents.json">
-               </FileRef>
-            </Group>
-            <Group
-               location = "group:AccentColor.colorset"
-               name = "AccentColor.colorset">
-               <FileRef
-                  location = "group:Contents.json">
-               </FileRef>
-            </Group>
-            <FileRef
-               location = "group:Contents.json">
-            </FileRef>
-         </Group>
-         <Group
-            location = "group:Base.lproj"
-            name = "Base.lproj">
-            <FileRef
-               location = "group:Main.storyboard">
-            </FileRef>
-         </Group>
-         <FileRef
-            location = "group:AppkitConverter.entitlements">
-         </FileRef>
-         <FileRef
-            location = "group:AppDelegate.swift">
-         </FileRef>
-      </Group>
-      <Group
-         location = "group:AppkitConverterUITests"
-         name = "AppkitConverterUITests">
-         <FileRef
-            location = "group:AppkitConverterUITestsLaunchTests.swift">
-         </FileRef>
-         <FileRef
-            location = "group:AppkitConverterUITests.swift">
-         </FileRef>
-      </Group>
       <FileRef
          location = "group:AppkitConverter.xcodeproj">
       </FileRef>
-      <Group
-         location = "group:AppkitConverterTests"
-         name = "AppkitConverterTests">
-         <FileRef
-            location = "group:AppkitConverterTests.swift">
-         </FileRef>
-      </Group>
    </Group>
    <Group
       location = "group:CatalystConverter"

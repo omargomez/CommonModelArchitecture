@@ -29,9 +29,9 @@ public struct HomeViewInput {
 public struct HomeViewOutput {
     public let sourceTitle: AnyPublisher<String, Never>
     public let targetTitle: AnyPublisher<String, Never>
-    public let error: AnyPublisher<ErrorViewModel?, Never>
-    public let sourceResult: AnyPublisher<AmountViewModel?, Never>
-    public let targetResult: AnyPublisher<AmountViewModel?, Never>
+    public let error: AnyPublisher<ErrorViewModel, Never>
+    public let sourceResult: AnyPublisher<AmountViewModel, Never>
+    public let targetResult: AnyPublisher<AmountViewModel, Never>
     public let busy: AnyPublisher<Bool, Never>
 }
 
@@ -160,9 +160,9 @@ private extension HomeViewModelImpl {
         
         return HomeViewOutput(sourceTitle: $sourceTitle.eraseToAnyPublisher(),
                               targetTitle: $targetTitle.eraseToAnyPublisher(),
-                              error: $error.eraseToAnyPublisher(),
-                              sourceResult: $sourceResult.eraseToAnyPublisher(),
-                              targetResult: $targetResult.eraseToAnyPublisher(),
+                              error: $error.compactMap({$0}).eraseToAnyPublisher(),
+                              sourceResult: $sourceResult.compactMap({$0}).eraseToAnyPublisher(),
+                              targetResult: $targetResult.compactMap({$0}).eraseToAnyPublisher(),
                               busy: $busy.eraseToAnyPublisher())
     }
     

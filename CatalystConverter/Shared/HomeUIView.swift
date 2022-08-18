@@ -114,11 +114,11 @@ struct HomeUIView: View {
                 sourceAmount = text
             }
         })
-        .onChange(of: viewModel.error, perform: { newValue in
-            errorAlert = true
-        })
         .onChange(of: pickerMode, perform: { newValue in
             showCurrencyPicker =  (newValue != nil)
+        })
+        .onReceive(viewModel.output.error, perform: { value in
+            errorAlert = true
         })
         .alert(isPresented: $errorAlert, content: {
             Alert(title: Text(viewModel.error?.title ?? "--"), message:

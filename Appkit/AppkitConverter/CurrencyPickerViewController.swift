@@ -48,11 +48,9 @@ private extension CurrencyPickerViewController {
     func bind(_ output: PickCurrencyViewOutput) {
         
         output.symbols
+            .receive(on: RunLoop.main)
             .sink(receiveValue: { value in
-                // TODO, hack???
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+                self.tableView.reloadData()
             })
             .store(in: &cancellables)
         

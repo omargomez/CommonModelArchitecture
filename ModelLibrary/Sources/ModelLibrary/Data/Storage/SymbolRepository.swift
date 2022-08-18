@@ -104,7 +104,7 @@ class SymbolRepositoryImpl: SymbolRepository {
     func filter(byDescription text: String) -> [SymbolEntity]? {
         do {
             let fetchReq = NSFetchRequest<SymbolEntity>(entityName: "SymbolEntity")
-            fetchReq.predicate = NSPredicate(format: "symbolDescription CONTAINS %@", text)
+            fetchReq.predicate = NSPredicate(format: "symbolDescription CONTAINS[c] %@", text)
             return try container.viewContext.fetch(fetchReq)
         } catch {
             return nil

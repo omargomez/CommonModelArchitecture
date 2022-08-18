@@ -56,7 +56,7 @@ extension ViewController: NSTextFieldDelegate {
             if text == self.sourceField {
                 viewModel.input.onInputSource.send(sourceField.stringValue)
             } else {
-                viewModel.input.onInputTarget.send(sourceField.stringValue)
+                viewModel.input.onInputTarget.send(targetField.stringValue)
             }
         }
     }
@@ -78,13 +78,12 @@ private extension ViewController {
             .store(in: &cancellables)
         
         output.error
-            .sink(receiveValue: { value in // TODO alert
-                print("Error: \(value)")
+            .sink(receiveValue: { value in
+                self.runAlert(message: value.description)
             })
             .store(in: &cancellables)
         
         output.sourceResult
-            .compactMap({$0}) //TODO: Is this expecting nil?
             .sink(receiveValue: { value in
                 self.sourceField.stringValue = value.description
             })
@@ -109,6 +108,13 @@ private extension ViewController {
             .store(in: &cancellables)
     }
     
+    func runAlert(message: String) {
+        let alert = NSAlert()
+        alert.messageText = message
+        alert.alertStyle = NSAlert.Style.warning
+        alert.addButton(withTitle: "OK")
+        alert.runModal()
+    }
     
 }
 
